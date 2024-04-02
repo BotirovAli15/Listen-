@@ -1,0 +1,18 @@
+body {
+    background-color: rgb(115, 224, 115);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+button {
+    margin: 15px;
+    border: none;
+    background-color: aqua;
+    padding: 75px 230px;
+    font-size: 60px;
+    border-radius: 8px;
+    cursor: pointer;
+}
