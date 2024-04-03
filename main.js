@@ -60,6 +60,10 @@ const recognizeSpeech = (recognition) => {
             playMusic();
         }if (transcript.includes('выключи музыку')) {
             stopMusic();
+        }if (transcript.includes('play music')) {
+            playMusic();
+        }if (transcript.includes('stop music')) {
+            stopMusic();
         }
     };
 }
