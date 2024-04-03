@@ -13,6 +13,22 @@ function openTelegram() {
     window.open('https://t.me/st_897', 'blank');
 }
 
+let audioPlayer; 
+
+function playMusic() {
+    if (!audioPlayer) {
+        audioPlayer = new Audio('sigma.m4a');
+    }
+    audioPlayer.play();
+}
+
+function stopMusic() {
+    if (audioPlayer) {
+        audioPlayer.pause();
+        audioPlayer.currentTime = 0;
+    }
+}
+
 const recognitionRU = new webkitSpeechRecognition();
 recognitionRU.lang = 'ru-RU'; 
 
@@ -26,12 +42,12 @@ const recognizeSpeech = (recognition) => {
 
         if (transcript.includes('открой youtube')) {
             openYouTube();
+        }if(transcript.includes("open youtube")){
+            openYouTube();
         }if(transcript.includes('открой гугл')){
             openChrome();
         }if(transcript.includes("open chrome")){
             openChrome();
-        }if(transcript.includes("open youtube")){
-            openYouTube();
         }if(transcript.includes('открой space')){
             openSpace();
         }if(transcript.includes('open space')){
@@ -40,19 +56,17 @@ const recognizeSpeech = (recognition) => {
             openTelegram();
         }if(transcript.includes('открой telegram')){
             openTelegram();
+        }if (transcript.includes('включи музыку')) {
+            playMusic();
+        }if (transcript.includes('выключи музыку')) {
+            stopMusic();
         }
-        
     };
 }
 
 document.getElementById('start-button').addEventListener('click', function() {
     recognizeSpeech(recognitionRU);
     recognitionRU.start();
-});
-
-document.getElementById('start-button-en').addEventListener('click', function() {
-    recognizeSpeech(recognitionEN);
-    recognitionEN.start();
 });
 
 window.onload = function() {
