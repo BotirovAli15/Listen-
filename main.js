@@ -10,7 +10,7 @@ function openSpace() {
     window.open('https://space.marsit.uz/main#active-course', 'blank');
 }
 function openTelegram() {
-    window.open('https://t.me/BotirovAli15', 'blank');
+    window.open('https://t.me/st_897', 'blank');
 }
 
 const recognitionRU = new webkitSpeechRecognition();
