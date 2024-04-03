@@ -9,7 +9,9 @@ function openChrome() {
 function openSpace() {
     window.open('https://space.marsit.uz/main#active-course', 'blank');
 }
-
+function openTelegram() {
+    window.open('https://t.me/BotirovAli15', 'blank');
+}
 
 const recognitionRU = new webkitSpeechRecognition();
 recognitionRU.lang = 'ru-RU'; 
@@ -34,6 +36,10 @@ const recognizeSpeech = (recognition) => {
             openSpace();
         }if(transcript.includes('open space')){
             openSpace();
+        }if(transcript.includes('open telegram')){
+            openTelegram();
+        }if(transcript.includes('открой telegram')){
+            openTelegram();
         }
         
     };
