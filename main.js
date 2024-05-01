@@ -12,6 +12,18 @@ function openSpace() {
 function openTelegram() {
     window.open('https://t.me/st_897', 'blank');
 }
+function repeatMusic() {
+    if (audioPlayer) {
+        audioPlayer.loop = true;
+        audioPlayer.play();
+    }
+}
+function stopRepeat() {
+    if (audioPlayer) {
+        audioPlayer.loop = false;
+    }
+}
+
 
 let audioPlayer; 
 
@@ -64,8 +76,13 @@ const recognizeSpeech = (recognition) => {
             playMusic();
         }if (transcript.includes('stop music')) {
             stopMusic();
+        }if (transcript.includes('repeat music')) {
+            repeatMusic();
+        }if (transcript.includes('stop repeat music')) {
+            stopRepeat();
+            
         }
-    };
+    }
 }
 
 document.getElementById('start-button').addEventListener('click', function() {
